@@ -1,0 +1,43 @@
+✔ mock is the default and a blank key never enables live mode (1.1059ms)
+✔ profile annualizes salary but does not infer a premium budget (0.214ms)
+✔ actual DOB calculates age only and rejects invalid calendar dates (1.0828ms)
+✔ invalid profile changes cannot mutate the original profile (0.1806ms)
+✔ income-based coverage differs for different salaries within product limits (8.4164ms)
+✔ dependants increase the planning need and existing cover reduces it (1.4152ms)
+✔ existing adequate cover suppresses unnecessary upgrade needs (0.5628ms)
+✔ actual age outside catalogue eligibility produces no invented alternative (5.3331ms)
+✔ premium changes include monthly, annual, absolute and percent difference (1.6401ms)
+✔ payment frequency uses deterministic catalogue discount and shorter payment term raises contributions (2.7493ms)
+✔ no-match constraint recovery works without a model (1.8645ms)
+✔ upgrade is a bounded sum-assured change with computed incremental premium (3.4737ms)
+✔ retrieval selects only requested fields and static data is cached (0.9729ms)
+✔ no market feed or customer data yields explicit unavailable states (3.497ms)
+✔ natural mock requirement captures income without treating salary as budget (3.6429ms)
+✔ contextual higher-cover follow-up reuses the prior profile (2.7189ms)
+✔ users can change income and switch product direction without a questionnaire (1.8124ms)
+✔ exclusions, unrelated questions, and existing-policy help are safe and contextual (2.4796ms)
+✔ compact history is bounded while material profile details are retained (0.2468ms)
+✔ mock tools consume no model requests (1.461ms)
+{"event":"llm_usage","model":"gpt-4o","requestType":"advisory","inputTokens":20,"outputTokens":10,"totalTokens":30,"latencyMs":2,"error":null,"usageReported":true,"estimatedUsd":null}
+{"event":"llm_usage","model":"gpt-4o","requestType":"advisory","inputTokens":20,"outputTokens":10,"totalTokens":30,"latencyMs":1,"error":null,"usageReported":true,"estimatedUsd":null}
+✔ live orchestration uses validated tools, then structured grounded output (mock HTTP transport) (6.0782ms)
+{"event":"llm_usage","model":"gpt-4o","requestType":"advisory","inputTokens":0,"outputTokens":0,"totalTokens":0,"latencyMs":0,"error":"rate_limit","usageReported":false,"estimatedUsd":null}
+{"event":"llm_usage","model":"gpt-4o","requestType":"advisory","inputTokens":0,"outputTokens":0,"totalTokens":0,"latencyMs":1,"error":"credentials","usageReported":false,"estimatedUsd":null}
+{"event":"llm_usage","model":"gpt-4o","requestType":"advisory","inputTokens":0,"outputTokens":0,"totalTokens":0,"latencyMs":1,"error":"provider","usageReported":false,"estimatedUsd":null}
+{"event":"llm_usage","model":"gpt-4o","requestType":"advisory","inputTokens":0,"outputTokens":0,"totalTokens":0,"latencyMs":16,"error":"timeout","usageReported":false,"estimatedUsd":null}
+✔ rate limits, provider failures and timeouts use local fallback without retries (20.9395ms)
+✔ HTTP server blocks secrets/backend paths and validates tools without any OpenAI request (145.5935ms)
+✔ existing-cover updates preserve the chosen sum assured and refresh income planning (4.8156ms)
+✔ unsupported categories never receive a fictional life premium or upgrade (0.8666ms)
+{"event":"llm_usage","model":"gpt-4o","requestType":"advisory","inputTokens":0,"outputTokens":0,"totalTokens":0,"latencyMs":0,"error":null,"usageReported":false,"estimatedUsd":null}
+✔ ungrounded model monetary numbers are rejected instead of shown as facts (4.2141ms)
+✔ Arabic request text survives a network chunk split inside a UTF-8 character (24.5849ms)
+✔ plan recommendations with a supplied sum assured include a grounded optional upgrade (2.6111ms)
+ℹ tests 28
+ℹ suites 0
+ℹ pass 28
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 514.1765

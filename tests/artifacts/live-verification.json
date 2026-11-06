@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "mode": "live",
+  "model": "gpt-4o-2024-08-06",
+  "error": null,
+  "httpStatus": null,
+  "liveRequests": 1,
+  "inputTokens": 1455,
+  "outputTokens": 80,
+  "reply": {
+    "en": "The sum assured is the guaranteed amount paid to beneficiaries upon the policyholder's death or the occurrence of a specified event.",
+    "ar": "المبلغ المؤمن عليه هو المبلغ المضمون الذي يُدفع للمستفيدين عند وفاة حامل الوثيقة أو حدوث حدث محدد."
+  }
+}

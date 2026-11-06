@@ -1,0 +1,61 @@
+60 passed; 0 failed
+PASS: Every English content key has an Arabic translation
+PASS: Every Arabic content key has an English translation
+PASS: English multi-detail typed input captures age and budget
+PASS: Arabic input and Arabic numerals capture age and budget
+PASS: Coverage-first typed sentence captures comma-separated cover
+PASS: Education typed sentence captures timeline
+PASS: Typed budget range captures the comfortable maximum
+PASS: Typed Ask a question follows the button journey
+PASS: Typed Help me decide starts guided plan discovery
+PASS: Default scenario matches three deterministic options
+PASS: Low budget produces no matches
+PASS: Ineligible age produces explicit eligibility reasons
+PASS: Coverage cannot extend beyond age 75
+PASS: More cover increases the illustrative contribution
+PASS: Shorter savings payment term increases contributions
+PASS: Annual frequency applies the fictional annual discount
+PASS: Typed existing-policy request gates product choices behind demo login
+PASS: Successful demo login reaches product choices
+PASS: Landing page contains four categories and two Coming soon badges
+PASS: Desktop landing has no horizontal overflow
+PASS: Launcher opens guest onboarding
+PASS: Arabic language selector is correctly encoded
+PASS: Guest opens with requested welcome
+PASS: English UI captures multiple values and skips previously answered questions
+PASS: Button choices reach editable pre-search summary
+PASS: Language switch enables RTL and preserves current selections
+PASS: English journey returns three complete plan cards
+PASS: Scenario recalculates immediately and reports what changed
+PASS: Annual payment frequency recalculates displayed contributions
+PASS: Shorter payment term updates affordability
+PASS: Restoring payment term restores deterministic projection
+PASS: Two selected options open side-by-side comparison
+PASS: Chat minimizes
+PASS: Chat reopens without losing conversation or selections
+PASS: No-match view explains the budget constraint
+PASS: Editing the constraint recovers matching options
+PASS: Quote handoff is explicitly a demo
+PASS: Result cards and scenario controls translate to Arabic
+PASS: Arabic desktop chat has no horizontal overflow
+PASS: Arabic mobile landing has no horizontal overflow
+PASS: Mobile chatbot fills the viewport
+PASS: Arabic typed and button inputs complete education journey
+PASS: Education goal ranks the education product first
+PASS: Arabic savings projection is explicitly not guaranteed
+PASS: Arabic mobile plan cards fit without horizontal overflow
+PASS: Mobile minimize and reopen retains scenario
+PASS: Arabic typed existing-policy request opens demo login
+PASS: Incorrect demo credentials show a translated validation message
+PASS: Correct demo credentials open fictional profile selection
+PASS: Typed insurance question receives a local FAQ answer
+PASS: Budget-first typed path captures budget
+PASS: Coverage-first preset preserves amount and term
+PASS: Coverage-first path returns affordable protection option
+PASS: Education preset retains university timeline
+PASS: Education preset completes successfully
+PASS: Budget-first path supports unsure coverage and completes successfully
+PASS: Matching finishes safely when the chat is minimized
+PASS: English 320px mobile landing fits without horizontal overflow
+PASS: English 320px chat fills the viewport
+PASS: Arabic 320px mobile landing fits without horizontal overflow

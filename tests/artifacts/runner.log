@@ -1,0 +1,97 @@
+60 passed; 0 failed
+PASS: Every English content key has an Arabic translation
+PASS: Every Arabic content key has an English translation
+PASS: English multi-detail typed input captures age and budget
+PASS: Arabic input and Arabic numerals capture age and budget
+PASS: Coverage-first typed sentence captures comma-separated cover
+PASS: Education typed sentence captures timeline
+PASS: Typed budget range captures the comfortable maximum
+PASS: Typed Ask a question follows the button journey
+PASS: Typed Help me decide starts guided plan discovery
+PASS: Default scenario matches three deterministic options
+PASS: Low budget produces no matches
+PASS: Ineligible age produces explicit eligibility reasons
+PASS: Coverage cannot extend beyond age 75
+PASS: More cover increases the illustrative contribution
+PASS: Shorter savings payment term increases contributions
+PASS: Annual frequency applies the fictional annual discount
+PASS: Typed existing-policy request gates product choices behind demo login
+PASS: Successful demo login reaches product choices
+PASS: Landing page contains four categories and three Coming soon badges
+PASS: Desktop landing has no horizontal overflow
+PASS: Launcher opens guest onboarding
+PASS: Arabic language selector is correctly encoded
+PASS: Guest opens with requested welcome
+PASS: English UI captures multiple values and skips previously answered questions
+PASS: Button choices reach editable pre-search summary
+PASS: Language switch enables RTL and preserves current selections
+PASS: English journey returns three complete plan cards
+PASS: Scenario recalculates immediately and reports what changed
+PASS: Annual payment frequency recalculates displayed contributions
+PASS: Shorter payment term updates affordability
+PASS: Restoring payment term restores deterministic projection
+PASS: Two selected options open side-by-side comparison
+PASS: Chat minimizes
+PASS: Chat reopens without losing conversation or selections
+PASS: No-match view explains the budget constraint
+PASS: Editing the constraint recovers matching options
+PASS: Quote handoff is explicitly a demo
+PASS: Result cards and scenario controls translate to Arabic
+PASS: Arabic desktop chat has no horizontal overflow
+PASS: Arabic mobile landing has no horizontal overflow
+PASS: Mobile chatbot fills the viewport
+PASS: Arabic typed and button inputs complete education journey
+PASS: Education goal ranks the education product first
+PASS: Arabic savings projection is explicitly not guaranteed
+PASS: Arabic mobile plan cards fit without horizontal overflow
+PASS: Mobile minimize and reopen retains scenario
+PASS: Arabic typed existing-policy request opens demo login
+PASS: Incorrect demo credentials show a translated validation message
+PASS: Correct demo credentials unlock product choices
+PASS: Typed insurance question receives a local FAQ answer
+PASS: Budget-first typed path captures budget
+PASS: Coverage-first preset preserves amount and term
+PASS: Coverage-first path returns affordable protection option
+PASS: Education preset retains university timeline
+PASS: Education preset completes successfully
+PASS: Budget-first path supports unsure coverage and completes successfully
+PASS: Matching finishes safely when the chat is minimized
+PASS: English 320px mobile landing fits without horizontal overflow
+PASS: English 320px chat fills the viewport
+PASS: Arabic 320px mobile landing fits without horizontal overflow
+29 passed; 0 failed
+PASS: Natural requirement annualizes income
+PASS: Salary is not treated as the contribution budget
+PASS: User receives assistance without a mandatory questionnaire
+PASS: Mock mode is clearly visible
+PASS: Income-based basic and enhanced cover cards are interactive
+PASS: A salary correction updates stored context
+PASS: Coverage suggestions adapt to corrected income
+PASS: Dependant and existing-cover details are reused
+PASS: Existing cover does not silently overwrite the desired sum assured
+PASS: Coverage card opens an embedded working premium calculator
+PASS: Changing cover updates the backend premium
+PASS: Calculator displays absolute and percentage change
+PASS: Annual view switches locally
+PASS: Calculator and view updates cause no LLM requests
+PASS: Higher-cover follow-up retains the current selection
+PASS: Optional upgrade has functional accept, dismiss and modify actions
+PASS: Accepting the upgrade updates the scenario
+PASS: A comparison request produces a side-by-side table
+PASS: Missing social data is explicit alongside recommendations
+PASS: Exclusions are retrieved and marked unavailable rather than invented
+PASS: Market analysis discloses the absence of competitor data
+PASS: An unrelated question does not force a questionnaire
+PASS: Unsupported health products are not invented
+PASS: Actual age outside product eligibility produces a clear no-match
+PASS: Arabic natural language retains structured attributes
+PASS: Advisory conversation supports Arabic RTL
+PASS: Arabic rich cards fit a 320px screen
+PASS: Minimize/reopen retains advisory context
+PASS: Developer usage confirms zero live model requests in mock mode
+Captured desktop-landing.png
+Captured desktop-chat.png
+Captured desktop-results.png
+Captured mobile-landing.png
+Captured mobile-arabic-chat.png
+Captured mobile-arabic-results.png

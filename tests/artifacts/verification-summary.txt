@@ -1,0 +1,9 @@
+﻿Final local verification
+- Backend: 28 passed, 0 failed.
+- Original English/Arabic browser journeys: 60 passed, 0 failed.
+- Enhanced advisory browser journeys: 30 passed, 0 failed.
+- Total: 118 passing checks.
+- Live OpenAI API requests: 0. Provider integration used an injected fake HTTP transport.
+- Private OPENAI_API_KEY: blank. Default model gpt-4o, mock mode enabled.
+- Desktop and Arabic mobile source cards, income planner and premium calculator visually inspected.
+- Live conversational quality has not been tested without the user's API key.

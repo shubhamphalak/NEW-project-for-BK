@@ -1,0 +1,18 @@
+17 passed; 0 failed
+PASS: Entry offers demo login and guest
+PASS: Guest gets three source-backed motor options
+PASS: Conversation captures multiple details
+PASS: Official evidence link is visible
+PASS: Actual backend activity summary remains available
+PASS: Budget what-if updates the recommendation
+PASS: Missing market feed honestly marked unavailable
+PASS: Arabic switch renders RTL
+PASS: Official motor cards translate
+PASS: Language switch preserves context
+PASS: Motor cards fit mobile RTL width
+PASS: Quote opens review and confirmation
+PASS: Confirmed quote is explicitly simulated
+PASS: Advisor preparation works
+PASS: Motor context restores after life topic change
+PASS: Demo profile uses existing cover without asking again
+PASS: Demo login retrieves known city

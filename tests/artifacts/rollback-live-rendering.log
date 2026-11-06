@@ -1,0 +1,12 @@
+{"event":"llm_usage","model":"gpt-4.1","requestType":"advisory","inputTokens":0,"outputTokens":0,"totalTokens":0,"latencyMs":7,"error":null,"usageReported":false,"estimatedUsd":null}
+{"event":"llm_usage","model":"gpt-4.1","requestType":"advisory","inputTokens":0,"outputTokens":0,"totalTokens":0,"latencyMs":1,"error":"credentials","usageReported":false,"estimatedUsd":null}
+8 passed; 0 failed
+PASS: The real chat client sends text to the backend and renders the live response
+PASS: The returned English GPT response is displayed in the conversation
+PASS: No provider credential is present in the frontend
+PASS: An invalid key displays an informative error, not a mock answer
+PASS: Failed Live Mode requests do not run local extraction or mutate the profile
+PASS: Raw provider error bodies cannot leak keys into the UI
+PASS: A failed browser/backend request does not substitute a rule-based response
+PASS: Frontend network failure preserves the existing profile
+Backend fixture requests: 2; browser Authorization header present: false; additional real OpenAI requests: 0

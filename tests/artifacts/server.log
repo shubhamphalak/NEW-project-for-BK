@@ -1,0 +1,3 @@
+ART prototype: http://127.0.0.1:4173
+Advisor mode: mock; model: gpt-4o
+No live API calls in mock/local mode.

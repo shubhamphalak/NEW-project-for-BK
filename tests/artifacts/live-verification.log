@@ -1,0 +1,7 @@
+ART prototype: http://127.0.0.1:4173
+.env: loaded (C:\Users\nbedmutha\OneDrive - Deloitte (O365D)\Documents\AI Assets\Design to Dashboard\pbi_updated\art-insurance\.env)
+LLM_ENABLED=true; MOCK_LLM_MODE=false; OPENAI_API_KEY=present (value hidden)
+Advisor mode: Live LLM Mode; model: gpt-4o
+Chat messages call the OpenAI API. Deterministic calculators do not.
+{"event":"llm_usage","model":"gpt-4o-2024-08-06","requestType":"advisory","inputTokens":1455,"outputTokens":80,"totalTokens":1535,"latencyMs":4605,"error":null,"usageReported":true,"estimatedUsd":null}
+{"passed":true,"mode":"live","model":"gpt-4o-2024-08-06","error":null,"httpStatus":null,"liveRequests":1,"inputTokens":1455,"outputTokens":80}

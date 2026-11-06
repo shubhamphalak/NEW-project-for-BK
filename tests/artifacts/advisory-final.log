@@ -1,0 +1,39 @@
+30 passed; 0 failed
+PASS: Natural requirement annualizes income
+PASS: Salary is not treated as the contribution budget
+PASS: User receives assistance without a mandatory questionnaire
+PASS: Mock mode is clearly visible
+PASS: Income-based basic and enhanced cover cards are interactive
+PASS: A salary correction updates stored context
+PASS: Coverage suggestions adapt to corrected income
+PASS: Dependant and existing-cover details are reused
+PASS: Existing cover does not silently overwrite the desired sum assured
+PASS: Coverage card opens an embedded working premium calculator
+PASS: Changing cover updates the backend premium
+PASS: Calculator displays absolute and percentage change
+PASS: Annual view switches locally
+PASS: Calculator and view updates cause no LLM requests
+PASS: Higher-cover follow-up retains the current selection
+PASS: Optional upgrade has functional accept, dismiss and modify actions
+PASS: Editing a higher-cover scenario refreshes its optional upgrade
+PASS: Accepting the upgrade updates the scenario
+PASS: A comparison request produces a side-by-side table
+PASS: Missing social data is explicit alongside recommendations
+PASS: Exclusions are retrieved and marked unavailable rather than invented
+PASS: Market analysis discloses the absence of competitor data
+PASS: An unrelated question does not force a questionnaire
+PASS: Unsupported health products are not invented
+PASS: Actual age outside product eligibility produces a clear no-match
+PASS: Arabic natural language retains structured attributes
+PASS: Advisory conversation supports Arabic RTL
+PASS: Arabic rich cards fit a 320px screen
+PASS: Minimize/reopen retains advisory context
+PASS: Developer usage confirms zero live model requests in mock mode
+Captured desktop-landing.png
+Captured desktop-chat.png
+Captured desktop-results.png
+Captured mobile-landing.png
+Captured mobile-arabic-chat.png
+Captured mobile-arabic-results.png
+Captured desktop-income-planner.png
+Captured mobile-arabic-calculator.png

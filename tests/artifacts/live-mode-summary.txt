@@ -1,0 +1,12 @@
+﻿Live Mode configuration verification
+- The original private .env still had MOCK_LLM_MODE=true after the key was added.
+- .env now has LLM_ENABLED=true and MOCK_LLM_MODE=false; the private key value was preserved.
+- start.cmd does not assign LLM flags or API keys; it starts the backend and returns its exit code.
+- The application-root .env is loaded; nonempty inherited overrides are explicitly reported by name.
+- Live failures return clear bilingual errors and do not generate mock replies.
+- One real backend/OpenAI request succeeded using gpt-4o-2024-08-06.
+- Reported usage: 1,455 input tokens, 80 output tokens, 1,535 total.
+- 39 backend/configuration tests passed.
+- 8 frontend rendering/error tests passed with recorded reply/injected provider; no additional real API calls.
+- start.cmd was launched and its public backend status confirmed mode=live and keyConfigured=true.
+- .env remains blocked over HTTP; no key values are included in these reports or logs.

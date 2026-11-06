@@ -1,0 +1,129 @@
+﻿{
+    "version":  "art-demo-2",
+    "source":  {
+                   "status":  "fictional-demo",
+                   "label":  "Original ART prototype catalogue; not ART-approved product terms",
+                   "verified":  false
+               },
+    "products":  [
+                     {
+                         "id":  "family",
+                         "name":  "familyPlan",
+                         "category":  "life",
+                         "kind":  "protect",
+                         "minAge":  18,
+                         "maxAge":  60,
+                         "minTerm":  5,
+                         "maxTerm":  30,
+                         "minCover":  100000,
+                         "maxCover":  2000000,
+                         "rate":  35,
+                         "savings":  0,
+                         "flexPay":  false,
+                         "benefits":  [
+                                          "conditionalLifeBenefit"
+                                      ],
+                         "limitations":  [
+                                             "noSavings",
+                                             "fullTermPayments"
+                                         ],
+                         "exclusionsStatus":  "not-supplied",
+                         "riders":  [
+
+                                    ],
+                         "deductibles":  [
+
+                                         ],
+                         "copayments":  [
+
+                                        ],
+                         "displayName":  {
+                                             "ar":  "أساس العائلة",
+                                             "en":  "Family Foundation"
+                                         }
+                     },
+                     {
+                         "id":  "balance",
+                         "name":  "balancePlan",
+                         "category":  "life",
+                         "kind":  "combined",
+                         "minAge":  18,
+                         "maxAge":  55,
+                         "minTerm":  10,
+                         "maxTerm":  30,
+                         "minCover":  100000,
+                         "maxCover":  1000000,
+                         "rate":  48,
+                         "savings":  200,
+                         "flexPay":  true,
+                         "benefits":  [
+                                          "conditionalLifeBenefit",
+                                          "illustrativeSavings"
+                                      ],
+                         "limitations":  [
+                                             "investmentRisk",
+                                             "higherContribution"
+                                         ],
+                         "exclusionsStatus":  "not-supplied",
+                         "riders":  [
+
+                                    ],
+                         "deductibles":  [
+
+                                         ],
+                         "copayments":  [
+
+                                        ],
+                         "displayName":  {
+                                             "ar":  "توازن المستقبل",
+                                             "en":  "Future Balance"
+                                         }
+                     },
+                     {
+                         "id":  "education",
+                         "name":  "educationPlan",
+                         "category":  "life",
+                         "kind":  "education",
+                         "minAge":  18,
+                         "maxAge":  55,
+                         "minTerm":  10,
+                         "maxTerm":  25,
+                         "minCover":  100000,
+                         "maxCover":  750000,
+                         "rate":  40,
+                         "savings":  250,
+                         "flexPay":  true,
+                         "benefits":  [
+                                          "conditionalLifeBenefit",
+                                          "illustrativeSavings"
+                                      ],
+                         "limitations":  [
+                                             "investmentRisk",
+                                             "higherContribution"
+                                         ],
+                         "exclusionsStatus":  "not-supplied",
+                         "riders":  [
+
+                                    ],
+                         "deductibles":  [
+
+                                         ],
+                         "copayments":  [
+
+                                        ],
+                         "displayName":  {
+                                             "ar":  "آفاق التعليم",
+                                             "en":  "Education Horizon"
+                                         }
+                     }
+                 ],
+    "needsRules":  {
+                       "basicIncomeYears":  3,
+                       "recommendedIncomeYears":  5,
+                       "enhancedIncomeYears":  10,
+                       "dependantIncomeYears":  0.5,
+                       "maxDependantYears":  3,
+                       "rounding":  25000,
+                       "disclosure":  "Illustrative planning heuristic, not an insurer rule or financial advice. Income replacement years plus a dependant adjustment, less existing cover; constrained by each demo product\u0027s limits."
+                   }
+}

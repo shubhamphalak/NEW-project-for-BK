@@ -1,0 +1,18 @@
+<anonymous_script>:1
+﻿{
+^
+
+SyntaxError: Unexpected token '﻿', "﻿{
+    "n"... is not valid JSON
+    at JSON.parse (<anonymous>)
+    at Object.<anonymous> (C:\Users\nbedmutha\OneDrive - Deloitte (O365D)\Documents\AI Assets\Design to Dashboard\pbi_updated\art-insurance\scripts\verify-update.cjs:30:16)
+    at Module._compile (node:internal/modules/cjs/loader:1937:14)
+    at Object..js (node:internal/modules/cjs/loader:2070:10)
+    at Module.load (node:internal/modules/cjs/loader:1658:32)
+    at node:internal/modules/cjs/loader:1450:12
+    at Module._load (node:electron/js2c/node_init:2:18263)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:268:19)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:169:5)
+    at node:internal/main/run_main_module:33:47
+
+Node.js v24.20.0

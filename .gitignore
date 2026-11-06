@@ -1,0 +1,12 @@
+﻿node_modules/
+tests/artifacts/chrome-profile/
+tests/artifacts/headless-profile/
+
+.env
+.env.*
+!.env.example
+
+tests/artifacts/mode-profile/
+
+tests/artifacts/conversation-profile/
+tests/artifacts/visual-profile/

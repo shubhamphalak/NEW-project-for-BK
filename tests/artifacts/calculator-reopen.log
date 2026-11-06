@@ -1,0 +1,1 @@
+Close/reopen cleanup is now scoped to the active calculator instance.

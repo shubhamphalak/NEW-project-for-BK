@@ -1,0 +1,1 @@
+Guest loading state now clears before the final render; keyboard and retry regressions added.

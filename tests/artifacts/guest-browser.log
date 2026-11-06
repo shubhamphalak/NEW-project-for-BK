@@ -1,0 +1,50 @@
+44 passed; 0 failed
+PASS: Entry offers login without persona selection
+PASS: Entry and landing have no retired labels 
+PASS: Starting-point paths are removed
+PASS: Failed guest startup returns to a retryable entry
+PASS: Failure clears guest loading state
+PASS: Guest composer accepts real keyboard input after startup
+PASS: Guest send button is enabled after startup
+PASS: Guest is asked for a name conversationally
+PASS: Thinking appears immediately under the prompt
+PASS: Indicator is the last conversation bubble
+PASS: Indicator sits directly below the user prompt
+PASS: Indicator never displays a form
+PASS: Processing persists while reply is held
+PASS: Indicator changes to Analyzing
+PASS: Response waits at least 3.4 seconds
+PASS: Indicator disappears after the complete reply
+PASS: Bot asks next for email
+PASS: Invalid email does not bypass onboarding
+PASS: Bot asks next for phone
+PASS: Guest contact discovery completes without a form
+PASS: Motor conversation captures several details together
+PASS: Source-backed motor recommendations work
+PASS: No age or premium forms appear
+PASS: User and advisor bubbles have distinct profile icons
+PASS: Development strips and response labels are absent
+PASS: Motor conversation contains no retired language 
+PASS: Budget updates conversationally
+PASS: Arabic chat is RTL
+PASS: Language switch preserves context
+PASS: Arabic cards fit mobile width
+PASS: Arabic life discovery also uses conversation
+PASS: Missing age is asked in a message
+PASS: Short Arabic age answer is understood
+PASS: Arabic budget is retained
+PASS: Recommendation does not reopen the scenario editor
+PASS: Existing-policy help opens the same login
+PASS: Login does not display credentials or persona language
+PASS: Backend rejects invalid login
+PASS: Correct backend credentials authenticate
+PASS: Login invents no policies or customer personas
+PASS: Password never appears on screen
+PASS: Password is not persisted in conversation state
+PASS: Authenticated existing-policy help does not repeat login
+PASS: Unavailable policy records are stated accurately
+Captured conversation-desktop.png
+Captured conversation-mobile-arabic.png
+Captured login-desktop.png
+Captured thinking-mobile.png
+Captured motor-mobile-arabic.png

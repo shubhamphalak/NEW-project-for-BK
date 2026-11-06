@@ -1,0 +1,8 @@
+{
+  "target": "Before recommendation redesign and numeric-verification removal",
+  "restored": 18,
+  "removed": 4,
+  "allTargetChecksumsMatch": true,
+  "privateEnvironmentUnchanged": true,
+  "syntaxChecksPassed": true
+}

@@ -1,0 +1,95 @@
+✔ same understanding operation uses request-specific public descriptions (2.6945ms)
+✔ lifecycle events carry bilingual descriptions of the actual run (60.0178ms)
+✔ missing evidence retains the honest unavailable status and evidence description (2.9991ms)
+{"event":"llm_usage","model":"gpt-4.1","requestType":"advisory","inputTokens":0,"outputTokens":0,"totalTokens":0,"latencyMs":89,"error":null,"usageReported":false,"estimatedUsd":null}
+{"event":"llm_usage","model":"gpt-4.1","requestType":"advisory","inputTokens":0,"outputTokens":0,"totalTokens":0,"latencyMs":0,"error":null,"usageReported":false,"estimatedUsd":null}
+✔ live motor follow-up is not followed by an unrelated fixed vehicle question (159.4681ms)
+✔ mock is the default and a blank key never enables live mode (2.669ms)
+✔ profile annualizes salary but does not infer a premium budget (1.259ms)
+✔ actual DOB calculates age only and rejects invalid calendar dates (3.2762ms)
+✔ invalid profile changes cannot mutate the original profile (1.9858ms)
+✔ income-based coverage differs for different salaries within product limits (20.7993ms)
+✔ dependants increase the planning need and existing cover reduces it (5.041ms)
+✔ existing adequate cover suppresses unnecessary upgrade needs (1.1184ms)
+✔ actual age outside catalogue eligibility produces no invented alternative (83.0326ms)
+✔ premium changes include monthly, annual, absolute and percent difference (12.3394ms)
+✔ payment frequency uses deterministic catalogue discount and shorter payment term raises contributions (4.1757ms)
+✔ no-match constraint recovery works without a model (3.2012ms)
+✔ upgrade is a bounded sum-assured change with computed incremental premium (2.3739ms)
+✔ retrieval selects only requested fields and static data is cached (1.8798ms)
+✔ no market feed or customer data yields explicit unavailable states (9.3865ms)
+✔ natural mock requirement captures income without treating salary as budget (7.1564ms)
+✔ contextual higher-cover follow-up reuses the prior profile (4.8777ms)
+✔ users can change income and switch product direction without a questionnaire (5.5691ms)
+✔ exclusions, unrelated questions, and existing-policy help are safe and contextual (5.7726ms)
+✔ compact history is bounded while material profile details are retained (1.31ms)
+✔ mock tools consume no model requests (4.3514ms)
+{"event":"llm_usage","model":"gpt-4.1","requestType":"advisory","inputTokens":20,"outputTokens":10,"totalTokens":30,"latencyMs":10,"error":null,"usageReported":true,"estimatedUsd":null}
+{"event":"llm_usage","model":"gpt-4.1","requestType":"advisory","inputTokens":20,"outputTokens":10,"totalTokens":30,"latencyMs":1,"error":null,"usageReported":true,"estimatedUsd":null}
+✔ live orchestration uses validated tools, then structured grounded output (mock HTTP transport) (24.8813ms)
+{"event":"llm_usage","model":"gpt-4.1","requestType":"advisory","inputTokens":0,"outputTokens":0,"totalTokens":0,"latencyMs":1,"error":"rate_limit","usageReported":false,"estimatedUsd":null}
+{"event":"llm_usage","model":"gpt-4.1","requestType":"advisory","inputTokens":0,"outputTokens":0,"totalTokens":0,"latencyMs":1,"error":"credentials","usageReported":false,"estimatedUsd":null}
+{"event":"llm_usage","model":"gpt-4.1","requestType":"advisory","inputTokens":0,"outputTokens":0,"totalTokens":0,"latencyMs":0,"error":"provider","usageReported":false,"estimatedUsd":null}
+{"event":"llm_usage","model":"gpt-4.1","requestType":"advisory","inputTokens":0,"outputTokens":0,"totalTokens":0,"latencyMs":16,"error":"timeout","usageReported":false,"estimatedUsd":null}
+✔ live failures return explicit errors without mock replies or retries (23.7455ms)
+✔ HTTP server blocks secrets/backend paths and validates tools without any OpenAI request (272.6949ms)
+✔ existing-cover updates preserve the chosen sum assured and refresh income planning (17.2175ms)
+✔ unsupported categories never receive a fictional life premium or upgrade (1.8533ms)
+{"event":"llm_usage","model":"gpt-4.1","requestType":"advisory","inputTokens":0,"outputTokens":0,"totalTokens":0,"latencyMs":2,"error":null,"usageReported":false,"estimatedUsd":null}
+✔ ungrounded model monetary numbers are rejected instead of shown as facts (5.5578ms)
+✔ Arabic request text survives a network chunk split inside a UTF-8 character (60.7557ms)
+✔ plan recommendations with a supplied sum assured include a grounded optional upgrade (11.5142ms)
+✔ the selected app root .env is loaded independently of the terminal directory (43.6972ms)
+✔ inherited nonempty settings have explicit precedence and report names only (38.3355ms)
+✔ empty inherited variables do not mask a populated private .env (17.5224ms)
+✔ mode flags tolerate whitespace/case and reject misspellings (2.2047ms)
+✔ startup messages accurately identify all modes without key values (0.6674ms)
+✔ start.cmd does not force any LLM or API key settings (9.945ms)
+✔ missing live credentials produce an error with zero provider calls (3.6787ms)
+{"event":"llm_usage","model":"gpt-4.1","requestType":"advisory","inputTokens":0,"outputTokens":0,"totalTokens":0,"latencyMs":9,"error":"credentials","usageReported":false,"estimatedUsd":null}
+✔ invalid credentials never invoke rule-based parsing or echo the provider key (18.1572ms)
+{"event":"llm_usage","model":"gpt-4.1","requestType":"advisory","inputTokens":0,"outputTokens":0,"totalTokens":0,"latencyMs":1,"error":"quota","usageReported":false,"estimatedUsd":null}
+{"event":"llm_usage","model":"gpt-4.1","requestType":"advisory","inputTokens":0,"outputTokens":0,"totalTokens":0,"latencyMs":1,"error":"rate_limit","usageReported":false,"estimatedUsd":null}
+{"event":"llm_usage","model":"gpt-4.1","requestType":"advisory","inputTokens":0,"outputTokens":0,"totalTokens":0,"latencyMs":0,"error":"permissions","usageReported":false,"estimatedUsd":null}
+{"event":"llm_usage","model":"gpt-4.1","requestType":"advisory","inputTokens":0,"outputTokens":0,"totalTokens":0,"latencyMs":1,"error":"model_unavailable","usageReported":false,"estimatedUsd":null}
+{"event":"llm_usage","model":"gpt-4.1","requestType":"advisory","inputTokens":0,"outputTokens":0,"totalTokens":0,"latencyMs":0,"error":"request_invalid","usageReported":false,"estimatedUsd":null}
+{"event":"llm_usage","model":"gpt-4.1","requestType":"advisory","inputTokens":0,"outputTokens":0,"totalTokens":0,"latencyMs":1,"error":null,"usageReported":false,"estimatedUsd":null}
+✔ quota, permissions and unavailable-model errors are distinguishable (13.0115ms)
+✔ OpenAI authentication exists only on the server-to-provider request (1.1726ms)
+{"event":"llm_usage","model":"gpt-4.1","requestType":"advisory","inputTokens":0,"outputTokens":0,"totalTokens":0,"latencyMs":1,"error":"credentials","usageReported":false,"estimatedUsd":null}
+✔ public config and chat endpoints expose errors, not credentials or mock replies (228.8741ms)
+✔ login validates credentials only on the server and never invents policy records (9.2312ms)
+✔ login and guest reset do not share authenticated sessions (2.3319ms)
+✔ frontend JavaScript contains no temporary credential literals (22.4826ms)
+✔ short age answer resolves the latest conversational question (23.2514ms)
+✔ signed-in existing policy request does not send the customer back to login (1.1174ms)
+✔ HTTP login hides credentials, returns HttpOnly cookie and rejects retired persona endpoint (291.8214ms)
+✔ HTTP login rate-limits repeated invalid passwords (107.0443ms)
+✔ guest entry starts openly with no contact gate or personal detail request (0.5596ms)
+✔ retired contact gate is cleared when a guest starts again (0.2684ms)
+{"event":"llm_usage","model":"gpt-4.1","requestType":"advisory","inputTokens":0,"outputTokens":0,"totalTokens":0,"latencyMs":1,"error":"credentials","usageReported":false,"estimatedUsd":null}
+✔ guest first insurance question reaches the intelligence service without contact collection (29.8885ms)
+✔ family discovery requests relevant income and captures a short numeric response (16.2565ms)
+✔ factual questions are answered without starting personal discovery (2.2562ms)
+{"event":"llm_usage","model":"gpt-4.1","requestType":"advisory","inputTokens":0,"outputTokens":0,"totalTokens":0,"latencyMs":44,"error":null,"usageReported":false,"estimatedUsd":null}
+✔ GPT-4.1 is the default and caller data cannot override model or storage (46.8333ms)
+✔ guest shares multiple motor details and gets official source-backed comparison (20.7437ms)
+✔ budget correction updates affected facts without pretending to reprice (5.5592ms)
+✔ missing market source is unavailable with useful partial ART guidance (2.6425ms)
+✔ confirmed motor information uses known cover and identifies gap and overlap (1.7363ms)
+✔ confirmed life information reuses age income and existing cover (12.3729ms)
+✔ switching products isolates and restores life and motor facts (4.2877ms)
+✔ browser sessions do not share motor facts and unknown customer IDs are rejected (3.3663ms)
+✔ Arabic motor details and budget corrections preserve context (4.6837ms)
+{"event":"llm_usage","model":"gpt-4.1","requestType":"advisory","inputTokens":0,"outputTokens":0,"totalTokens":0,"latencyMs":0,"error":"credentials","usageReported":false,"estimatedUsd":null}
+✔ live provider error never silently returns mock motor recommendation (5.9733ms)
+{"event":"llm_usage","model":"gpt-4.1","requestType":"advisory","inputTokens":0,"outputTokens":0,"totalTokens":0,"latencyMs":0,"error":null,"usageReported":false,"estimatedUsd":null}
+✔ live GPT-4.1 extraction runs server-side and updates validated motor context (3.392ms)
+ℹ tests 66
+ℹ suites 0
+ℹ pass 66
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1846.7632

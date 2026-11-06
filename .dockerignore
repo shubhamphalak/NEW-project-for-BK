@@ -1,0 +1,18 @@
+# Credentials are supplied at runtime, never sent in the build context.
+.env
+.env.*
+**/.env
+**/.env.*
+
+# Source control, local artifacts and test browser profiles are not runtime files.
+.git
+.gitignore
+node_modules
+**/node_modules
+tests
+scripts
+*.log
+*.zip
+README.md
+start.cmd
+test.cmd

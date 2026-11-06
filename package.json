@@ -1,0 +1,18 @@
+{
+  "name": "art-insurance-prototype",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test tests/backend.test.mjs tests/config.test.mjs tests/journeys.test.mjs tests/conversation.test.mjs tests/activity.test.mjs tests/nearby-plans.test.mjs tests/calculator-budget.test.mjs tests/container.test.mjs && node tests/live-rendering.mjs && node tests/conversation-browser.mjs",
+    "test:server": "node --test tests/backend.test.mjs tests/config.test.mjs tests/journeys.test.mjs tests/conversation.test.mjs tests/activity.test.mjs tests/nearby-plans.test.mjs tests/calculator-budget.test.mjs tests/container.test.mjs",
+    "test:browser": "node tests/conversation-browser.mjs",
+    "test:config": "node --test tests/config.test.mjs",
+    "test:live-rendering": "node tests/live-rendering.mjs",
+    "verify:live": "node scripts/verify-live.mjs"
+  }
+}

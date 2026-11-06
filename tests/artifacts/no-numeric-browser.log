@@ -1,0 +1,56 @@
+50 passed; 0 failed
+PASS: Retired verification notice is removed from saved chat
+PASS: Ordinary saved conversation messages are preserved
+PASS: Entry offers login without persona selection
+PASS: Entry and landing have no retired labels 
+PASS: Starting-point paths are removed
+PASS: Failed guest startup returns to a retryable entry
+PASS: Failure clears guest loading state
+PASS: Guest composer accepts real keyboard input after startup
+PASS: Guest send button is enabled after startup
+PASS: Guest opens with an open-ended invitation
+PASS: Guest is not asked for contact details
+PASS: Processing appears immediately under the prompt
+PASS: Indicator sits directly below the user prompt
+PASS: Label reflects the request-specific backend understanding event
+PASS: Label updates when the actual backend operation changes
+PASS: Completed operations are not shown as still running
+PASS: Minimum response display duration is retained
+PASS: Indicator disappears after the complete reply
+PASS: Open discovery has no required forms
+PASS: Motor conversation captures several details together
+PASS: Query response explains motor options
+PASS: No customer summary or quote section is shown
+PASS: Nothing replaces the removed sections
+PASS: No fixed plan catalogue is appended
+PASS: Returned plan comparisons have compact visual bullets
+PASS: Plan emphasis appears within the reply
+PASS: No age or premium forms appear
+PASS: User and advisor bubbles have distinct profile icons
+PASS: Development strips and response labels are absent
+PASS: Motor conversation contains no retired language 
+PASS: Budget updates conversationally
+PASS: Arabic chat is RTL
+PASS: Language switch preserves context
+PASS: Arabic cards fit mobile width
+PASS: Arabic life discovery also uses conversation
+PASS: Missing age is asked in a message
+PASS: Short Arabic age answer is understood
+PASS: Arabic budget is retained
+PASS: Recommendation does not reopen the scenario editor
+PASS: Life replies also have no appended summary, quote or replacement panels
+PASS: Life answer remains response-only
+PASS: Existing-policy help opens the same login
+PASS: Login does not display credentials or persona language
+PASS: Backend rejects invalid login
+PASS: Correct backend credentials authenticate
+PASS: Login invents no policies or customer personas
+PASS: Password never appears on screen
+PASS: Password is not persisted in conversation state
+PASS: Authenticated existing-policy help does not repeat login
+PASS: Unavailable policy records are stated accurately
+Captured conversation-desktop.png
+Captured conversation-mobile-arabic.png
+Captured login-desktop.png
+Captured thinking-mobile.png
+Captured motor-mobile-arabic.png

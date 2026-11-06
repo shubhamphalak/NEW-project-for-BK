@@ -1,0 +1,83 @@
+{
+  "source": {
+    "title": "ART Motor Insurance ? official product overview",
+    "url": "https://www.alrajhitakaful.com/en/ar/personal/car-insurance",
+    "retrievedAt": "2026-11-06",
+    "publishedAt": null,
+    "scope": "Saudi Arabia; product overview, not policy wording",
+    "kind": "official-art"
+  },
+  "products": [
+    {
+      "id": "comprehensive",
+      "name": {
+        "en": "Comprehensive",
+        "ar": "الشامل"
+      },
+      "ownDamage": true,
+      "collisionLimit": null,
+      "benefits": {
+        "en": [
+          "Own damage and third-party liability",
+          "Natural perils; windscreen, fire and theft"
+        ],
+        "ar": [
+          "أضرار المركبة والمسؤولية تجاه الغير",
+          "الأخطار الطبيعية والزجاج والحريق والسرقة"
+        ]
+      },
+      "tradeoff": {
+        "en": "Broader protection. Premium, excess, limits and exclusions require a personalised quote and policy wording.",
+        "ar": "حماية أوسع. يتطلب القسط والتحمل والحدود والاستثناءات عرض سعر وشروط الوثيقة."
+      }
+    },
+    {
+      "id": "smart",
+      "name": {
+        "en": "Wafi Smart",
+        "ar": "وافي سمارت"
+      },
+      "ownDamage": true,
+      "collisionLimit": 1,
+      "benefits": {
+        "en": [
+          "Third-party liability",
+          "One own-damage collision claim during the policy"
+        ],
+        "ar": [
+          "المسؤولية تجاه الغير",
+          "مطالبة واحدة لأضرار التصادم خلال الوثيقة"
+        ]
+      },
+      "tradeoff": {
+        "en": "Limited own-damage claims. Natural perils, windscreen, fire and theft are optional; confirm selected benefits.",
+        "ar": "مطالبات أضرار ذاتية محدودة. الأخطار الطبيعية والزجاج والحريق والسرقة اختيارية؛ تحقق من المنافع المختارة."
+      }
+    },
+    {
+      "id": "basic",
+      "name": {
+        "en": "Wafi Basic",
+        "ar": "وافي الأساسي"
+      },
+      "ownDamage": false,
+      "collisionLimit": 0,
+      "benefits": {
+        "en": [
+          "Third-party liability protection"
+        ],
+        "ar": [
+          "حماية المسؤولية تجاه الغير"
+        ]
+      },
+      "tradeoff": {
+        "en": "Does not provide own-damage collision protection. Confirm any optional extensions in the quote.",
+        "ar": "لا يوفر حماية أضرار التصادم لمركبتك. تحقق من التوسعات الاختيارية في عرض السعر."
+      }
+    }
+  ],
+  "limitations": {
+    "en": "Roadside assistance is optional. No verified prices, deductible amounts or complete eligibility and exclusion wording are connected. Publication date is not provided by the page; retrieved 6 November 2026. This is an ART-only comparison.",
+    "ar": "المساعدة على الطريق اختيارية. لا تتوفر أسعار موثقة أو مبالغ التحمل أو شروط الأهلية والاستثناءات الكاملة. لا تعرض الصفحة تاريخ نشر؛ جرى الاطلاع في ٦ نوفمبر ٢٠٢٦. المقارنة بين منتجات تكافل الراجحي فقط."
+  }
+}

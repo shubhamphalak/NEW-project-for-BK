@@ -1,0 +1,168 @@
+{
+  "target": "Before recommendation redesign and numeric-verification removal",
+  "replayed": [
+    "initial-native-pipe",
+    "scripts/update-experience.cjs",
+    "scripts/verify-update.cjs (partial)",
+    "scripts/final-fix.cjs",
+    "scripts/browser-update.cjs",
+    "scripts/finalise.cjs",
+    "scripts/cleanup.cjs",
+    "scripts/conversation-update.cjs",
+    "scripts/conversation-tests.cjs",
+    "scripts/conversation-polish.cjs",
+    "scripts/conversation-final.cjs",
+    "scripts/conversation-cleanup.cjs",
+    "scripts/fix-guest.cjs",
+    "scripts/open-conversation.cjs",
+    "scripts/open-conversation-tests.cjs",
+    "scripts/check-open-conversation.cjs",
+    "scripts/final-open-conversation.cjs",
+    "scripts/recommendation-update.cjs",
+    "scripts/recommendation-tests.cjs",
+    "scripts/final-recommendations.cjs",
+    "scripts/budget-retrieval.cjs",
+    "scripts/art-response-wording.cjs"
+  ],
+  "errors": [
+    {
+      "script": "scripts/verify-update.cjs",
+      "error": "Unexpected token '﻿', \"﻿{\r\n    \"n\"... is not valid JSON"
+    }
+  ],
+  "changed": [
+    {
+      "path": "src/styles.css",
+      "targetHash": "4c1835c9476783e588db4fdfde406d16f5f8ec3a0a13cefa0ee337a7881d4d5a",
+      "currentHash": "8631da9c5aca01e76fb697007ceae81ca5ba197276221154f697f9cf74318b03",
+      "action": "restore"
+    },
+    {
+      "path": ".env.example",
+      "targetHash": "de3c4d391958a44bdfa98262ac4cbcd0ec694a20509580ac245a1052ddca6360",
+      "currentHash": "d212fc888a812ad4b41b8c98c26f4dec390e1cf7738c07603f22c5823939686b",
+      "action": "restore"
+    },
+    {
+      "path": "tests/backend.test.mjs",
+      "targetHash": "80d89030799ef824bf672ba53ee2ed6a5f728c909a43c3eda6546741b0f94ec1",
+      "currentHash": "da152e8aa825499c6c4c2188c8774103318c617f565ecd0dbfb23bdf8a48641a",
+      "action": "restore"
+    },
+    {
+      "path": "src/i18n.js",
+      "targetHash": "7f5e37f06096d3b5230455532de5de3b0b3b047a070f56dd04a49ea2bc1ed964",
+      "currentHash": "4c09b2296dceacdf09d0aa65e573406411851beff2f7423e60424d45c34c6c4e",
+      "action": "restore"
+    },
+    {
+      "path": "server/prompts.mjs",
+      "targetHash": "71224c7b45f690134470ccb656a8420ac8a7b46d47fc7821a73e8cb7e0640137",
+      "currentHash": "4b6db5c0024bf17413ba3a9683eb4102bdce5647bdd85307715847c3e79b38b8",
+      "action": "restore"
+    },
+    {
+      "path": "src/advisory.js",
+      "targetHash": "5ac8f421fa48790c7319d54f8b4dcc7472c9ac03c3ba1c9bbedc21a5bec2ea24",
+      "currentHash": "809e26a8cfbc1d9f76e8d982886cee55b3840a27169df98777ba7aec8e288ded",
+      "action": "restore"
+    },
+    {
+      "path": "server/advisor.mjs",
+      "targetHash": "5597d44cf4e99c369471cfa95830a20d1f91992235fdd3149e37ca658ca34d3e",
+      "currentHash": "0db6c91d9217ca4ad36c5501fcbc459a229177b4e05caa5ff2328bf434bf6ae7",
+      "action": "restore"
+    },
+    {
+      "path": "package.json",
+      "targetHash": "5f45a206f9f08f3efe493776ba30092c6db2300a40357059005d13e56e02ba58",
+      "currentHash": "022512bb3ba8701fa621a6e1a41e6df2e463c07551776ce1479e9655c23a5108",
+      "action": "restore"
+    },
+    {
+      "path": "src/chat.js",
+      "targetHash": "19405ce8ba28eb008d1bb485f3d4497ab3458bccefb12166e773af1f4a55e621",
+      "currentHash": "5fc77472e3d060d220a10e25cc406f38addf4e4009d54e92bdd74eeb1a2abb79",
+      "action": "restore"
+    },
+    {
+      "path": "README.md",
+      "targetHash": "c48012be38353ec8c8c1de320dac2b519872753068ce1e2911f64685be6ab8d2",
+      "currentHash": "ae0192ef377d99467315f02f8b3144efce8589792227db17b5a09006c7e019ff",
+      "action": "restore"
+    },
+    {
+      "path": "server/config.mjs",
+      "targetHash": "b2c6d3503699e75b10e8fadf2945c19aaa78b047a4fae11a7822c673be6103fb",
+      "currentHash": "049167ff96f9e0674e0db661582367b6802fba9de2ac4f56d48a2cea449250a9",
+      "action": "restore"
+    },
+    {
+      "path": "server/errors.mjs",
+      "targetHash": "b6760c9a319989651bfb6a882a2555a065f028166ef70cbca3bc8bbe2a7305a3",
+      "currentHash": "200257cb5017833bd2a27cfd2a972849b5fdfffccdf2c274fcf1387cc65e2d05",
+      "action": "restore"
+    },
+    {
+      "path": "server/motor.mjs",
+      "targetHash": "7b1a886ae6326695468eeb84ad039755cb444ce48eecac70775a4f27a673cc49",
+      "currentHash": "8e793857ff2b93d0ac78c8f18564d5a0316f2a23080311815f876eb26e9cb717",
+      "action": "restore"
+    },
+    {
+      "path": "server/orchestrator.mjs",
+      "targetHash": "45221573e516bedc8ea61a317c89466e2e436ac64a6c6ec261a104919a7935ac",
+      "currentHash": "7d6bc3f82dfe8f91ded73052d63f921ead4af59a095c01439d735e948ea58dec",
+      "action": "restore"
+    },
+    {
+      "path": "src/experience.js",
+      "targetHash": "a328905931bb0caa321ef88c5a102065f11b91fea5ae5bb88fe130da21a74408",
+      "currentHash": "95b6af9e89eee976c915f25a0c75de7778fbf6c7f07d2b292361183bccb85211",
+      "action": "restore"
+    },
+    {
+      "path": "tests/journeys.test.mjs",
+      "targetHash": "9229684c660efd2f172b31801754ddaff4c69ea811a4c9a4cfa665365b445d48",
+      "currentHash": "d025f13b0f0f8019554893fabf2d83ffab976bad017cc456918a632833d135e6",
+      "action": "restore"
+    },
+    {
+      "path": "tests/conversation-run.js",
+      "targetHash": "8aa2735f4d0fab174e469f498809071963971072517863e495b3597b63dccabe",
+      "currentHash": "baa76f7e9ce83ddf2d3b7a663b62f477d50efa07d8f06facaa3bb2d935a300d9",
+      "action": "restore"
+    },
+    {
+      "path": "server/activity.mjs",
+      "targetHash": "48543a072a1949a0a31689692fcdfdb953318dfe190a9d35b2fb087f8c9cd089",
+      "currentHash": "5fa3c9a008029d92560c38ccf94545e509427a82eb06564527d075a227e9ced9",
+      "action": "restore"
+    },
+    {
+      "path": "server/budget.mjs",
+      "targetHash": null,
+      "currentHash": "c441bb400c78de8bcdc7e270beacc8baad9727672fca09dead2b5c180eeae005",
+      "action": "remove"
+    },
+    {
+      "path": "data/art-pricing.json",
+      "targetHash": null,
+      "currentHash": "a8453983f3a9aa23f3b9c200e98e0355e957aaf6c0ef6acb0350f4a36683c6b1",
+      "action": "remove"
+    },
+    {
+      "path": "src/message-format.js",
+      "targetHash": null,
+      "currentHash": "9001ada957c90f922fe8815bfa725a42534caf690bd467b20b278cb91447d3d4",
+      "action": "remove"
+    },
+    {
+      "path": "tests/budget.test.mjs",
+      "targetHash": null,
+      "currentHash": "48a759dfee77bef72b43b0f2b59df9539fa2f24b4e31efa866c717ae3a11b6a8",
+      "action": "remove"
+    }
+  ],
+  "mismatches": []
+}

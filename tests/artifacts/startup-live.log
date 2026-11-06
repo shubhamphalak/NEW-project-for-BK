@@ -1,0 +1,12 @@
+ART prototype: http://127.0.0.1:4173
+.env: loaded (C:\Users\nbedmutha\OneDrive - Deloitte (O365D)\Documents\AI Assets\Design to Dashboard\pbi_updated\art-insurance\.env)
+LLM_ENABLED=true; MOCK_LLM_MODE=false; OPENAI_API_KEY=present (value hidden)
+Advisor mode: Live LLM Mode; model: gpt-4o
+Chat messages call the OpenAI API. Deterministic calculators do not.
+{"event":"llm_usage","model":"gpt-4o-2024-08-06","requestType":"advisory","inputTokens":1439,"outputTokens":43,"totalTokens":1482,"latencyMs":3129,"error":null,"usageReported":true,"estimatedUsd":null}
+{"event":"llm_usage","model":"gpt-4o-2024-08-06","requestType":"advisory","inputTokens":1753,"outputTokens":566,"totalTokens":2319,"latencyMs":7347,"error":null,"usageReported":true,"estimatedUsd":null}
+{"event":"llm_usage","model":"gpt-4o-2024-08-06","requestType":"advisory","inputTokens":1438,"outputTokens":189,"totalTokens":1627,"latencyMs":3330,"error":null,"usageReported":true,"estimatedUsd":null}
+{"event":"llm_usage","model":"gpt-4o-2024-08-06","requestType":"advisory","inputTokens":1530,"outputTokens":387,"totalTokens":1917,"latencyMs":3731,"error":null,"usageReported":true,"estimatedUsd":null}
+{"event":"llm_usage","model":"gpt-4o-2024-08-06","requestType":"advisory","inputTokens":1439,"outputTokens":362,"totalTokens":1801,"latencyMs":6314,"error":null,"usageReported":true,"estimatedUsd":null}
+{"event":"llm_usage","model":"gpt-4o-2024-08-06","requestType":"advisory","inputTokens":1458,"outputTokens":53,"totalTokens":1511,"latencyMs":1459,"error":null,"usageReported":true,"estimatedUsd":null}
+{"event":"llm_usage","model":"gpt-4o-2024-08-06","requestType":"advisory","inputTokens":1918,"outputTokens":274,"totalTokens":2192,"latencyMs":5249,"error":null,"usageReported":true,"estimatedUsd":null}

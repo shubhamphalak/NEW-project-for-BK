@@ -1,0 +1,19 @@
+﻿// These messages are safe for the existing chat error area; never include provider bodies or key values.
+const messages={
+ missing_key:['Live AI is not configured: OPENAI_API_KEY is missing. Add it to the private .env file and restart the server. No mock response was substituted.','الذكاء المباشر غير مُعد: مفتاح OPENAI_API_KEY غير موجود. أضفه إلى ملف البيئة الخاص وأعد تشغيل الخادم. لم تُستخدم إجابة محاكاة.'],
+ credentials:['OpenAI rejected the API key. Check that it is valid and active, then restart the server. No mock response was substituted.','رفض OpenAI مفتاح API. تحقق من صلاحيته ثم أعد تشغيل الخادم. لم تُستخدم إجابة محاكاة.'],
+ permissions:['This API key or project does not have permission to use the requested model. Check project/model access.','لا يملك المفتاح أو المشروع صلاحية استخدام النموذج المطلوب. راجع صلاحيات المشروع والنموذج.'],
+ quota:['OpenAI reports insufficient credits or a project/organization spending limit. Check API billing and limits. No mock response was substituted.','أبلغ OpenAI عن رصيد غير كافٍ أو حد إنفاق للمشروع أو المؤسسة. راجع الفوترة والحدود. لم تُستخدم إجابة محاكاة.'],
+ rate_limit:['OpenAI temporarily rate-limited this request. Wait and try again. No mock response was substituted.','تم تقييد معدل هذا الطلب مؤقتاً. انتظر ثم حاول مجدداً. لم تُستخدم إجابة محاكاة.'],
+ timeout:['The live OpenAI request timed out. Please try again. No mock response was substituted.','انتهت مهلة طلب OpenAI المباشر. حاول مجدداً. لم تُستخدم إجابة محاكاة.'],
+ network:['The backend could not reach OpenAI. Check the network/proxy connection and try again. No mock response was substituted.','تعذر اتصال الخادم بـ OpenAI. راجع اتصال الشبكة أو الوكيل ثم حاول مجدداً. لم تُستخدم إجابة محاكاة.'],
+ model_unavailable:['The configured model is unavailable to this API project. Check OPENAI_MODEL and model access.','النموذج المُعد غير متاح لهذا المشروع. راجع OPENAI_MODEL وصلاحيات النموذج.'],
+ request_invalid:['OpenAI rejected the request configuration. Check the backend model and request settings. No mock response was substituted.','رفض OpenAI إعدادات الطلب. راجع إعدادات النموذج والطلب في الخادم. لم تُستخدم إجابة محاكاة.'],
+ provider:['The live AI service could not complete the request. Try again later. No mock response was substituted.','تعذر على الخدمة الذكية المباشرة إكمال الطلب. حاول لاحقاً. لم تُستخدم إجابة محاكاة.'],
+ context_budget:['The configured input-token budget was reached. Reduce the request or adjust LLM_INPUT_TOKEN_BUDGET. No mock response was substituted.','تم بلوغ ميزانية رموز الإدخال. قلل الطلب أو عدّل LLM_INPUT_TOKEN_BUDGET. لم تُستخدم إجابة محاكاة.'],
+ incomplete:['The live model response was incomplete. Try a shorter question or adjust LLM_MAX_OUTPUT_TOKENS. No mock response was substituted.','كانت استجابة النموذج المباشر غير مكتملة. اختصر السؤال أو عدّل LLM_MAX_OUTPUT_TOKENS. لم تُستخدم إجابة محاكاة.'],
+ invalid_response:['The live model response could not be validated. Please try again. No mock response was substituted.','تعذر التحقق من استجابة النموذج المباشر. حاول مجدداً. لم تُستخدم إجابة محاكاة.'],
+ tool_limit:['The configured AI tool-call limit was reached. Try a narrower question. No mock response was substituted.','تم بلوغ حد استدعاء الأدوات. جرّب سؤالاً أكثر تحديداً. لم تُستخدم إجابة محاكاة.'],
+ refusal:['The live model could not answer that request. Try rephrasing it. No mock response was substituted.','لم يتمكن النموذج المباشر من إجابة الطلب. جرّب إعادة صياغته. لم تُستخدم إجابة محاكاة.']
+};
+export function adviceFailure(code,profile,stage,provider={}){const [en,ar]=messages[code]||messages.provider;return {mode:'error',error:messages[code]?code:'provider',reply:{en,ar},layout:'reply',actions:[],planReasons:[],profile,stage,provider:{httpStatus:provider.httpStatus||null,requestId:provider.requestId||null}};}

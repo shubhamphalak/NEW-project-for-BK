@@ -1,0 +1,101 @@
+{
+  "replayed": 22,
+  "replayErrors": [
+    {
+      "script": "scripts/verify-update.cjs",
+      "error": "Unexpected token '﻿', \"﻿{\r\n    \"n\"... is not valid JSON"
+    }
+  ],
+  "filesToRestore": 22,
+  "currentFileMismatches": [],
+  "files": [
+    {
+      "path": "src/styles.css",
+      "action": "restore"
+    },
+    {
+      "path": ".env.example",
+      "action": "restore"
+    },
+    {
+      "path": "tests/backend.test.mjs",
+      "action": "restore"
+    },
+    {
+      "path": "src/i18n.js",
+      "action": "restore"
+    },
+    {
+      "path": "server/prompts.mjs",
+      "action": "restore"
+    },
+    {
+      "path": "src/advisory.js",
+      "action": "restore"
+    },
+    {
+      "path": "server/advisor.mjs",
+      "action": "restore"
+    },
+    {
+      "path": "package.json",
+      "action": "restore"
+    },
+    {
+      "path": "src/chat.js",
+      "action": "restore"
+    },
+    {
+      "path": "README.md",
+      "action": "restore"
+    },
+    {
+      "path": "server/config.mjs",
+      "action": "restore"
+    },
+    {
+      "path": "server/errors.mjs",
+      "action": "restore"
+    },
+    {
+      "path": "server/motor.mjs",
+      "action": "restore"
+    },
+    {
+      "path": "server/orchestrator.mjs",
+      "action": "restore"
+    },
+    {
+      "path": "src/experience.js",
+      "action": "restore"
+    },
+    {
+      "path": "tests/journeys.test.mjs",
+      "action": "restore"
+    },
+    {
+      "path": "tests/conversation-run.js",
+      "action": "restore"
+    },
+    {
+      "path": "server/activity.mjs",
+      "action": "restore"
+    },
+    {
+      "path": "server/budget.mjs",
+      "action": "remove"
+    },
+    {
+      "path": "data/art-pricing.json",
+      "action": "remove"
+    },
+    {
+      "path": "src/message-format.js",
+      "action": "remove"
+    },
+    {
+      "path": "tests/budget.test.mjs",
+      "action": "remove"
+    }
+  ]
+}

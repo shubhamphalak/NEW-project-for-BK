@@ -1,0 +1,6 @@
+ART prototype: http://127.0.0.1:4174
+.env: loaded (C:\Users\nbedmutha\OneDrive - Deloitte (O365D)\Documents\AI Assets\Design to Dashboard\pbi_updated\art-insurance\.env)
+LLM_ENABLED=true; MOCK_LLM_MODE=true; OPENAI_API_KEY=missing
+Inherited process environment overrides .env for: PORT. Clear those variables in the launching terminal to use .env.
+Advisor mode: Mock Mode; model configured: gpt-4.1
+No live API calls: MOCK_LLM_MODE=true. Set it to false to enable Live LLM Mode.

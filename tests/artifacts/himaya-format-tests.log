@@ -1,0 +1,16 @@
+✔ nearby comparison includes both ten-percent boundaries (1.3656ms)
+✔ nearest option is first and up to two alternatives follow (0.2251ms)
+✔ comparisons preserve coverage and exclude ineligible options (0.2401ms)
+✔ changed budget recomputes the shortlist and does not invent matches (0.2255ms)
+✔ no budget does not create an unsolicited numeric comparison (0.0985ms)
+✔ motor data without premiums is not presented as a price match (0.0972ms)
+✔ reply formatting safely adds emphasis and icons to actual answer text (0.6468ms)
+✔ retired verification notices are removed from restored chat history (0.1617ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 236.5467
