@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Simplified Explore checks</title>
+<body>
+<p id="status">Running</p>
+<ol id="checks"></ol>
+<script type="module">
+  import { initialState } from '../src/flow.js';
+
+  const results = [];
+  const check = (condition, label) => results.push({ condition, label });
+  const load = state => new Promise(resolve => {
+    sessionStorage.setItem('art-insurance-demo-v1', JSON.stringify(state));
+    const frame = document.createElement('iframe');
+    frame.width = 390;
+    frame.height = 850;
+    frame.onload = () => resolve(frame);
+    frame.src = `../index.html?explore-check=${Date.now()}`;
+    document.body.append(frame);
+  });
+
+  const entryFrame = await load({ ...initialState(), open: true, stage: 'new-entry' });
+  const entryDocument = entryFrame.contentDocument;
+  check(/Explore insurance options/i.test(entryDocument.querySelector('[data-new-path="guest"]')?.textContent || ''), 'Guest path is labelled Explore insurance options');
+  check(!/Learn before sharing details/i.test(entryDocument.body.textContent), 'Old Learn before sharing details label is removed');
+  entryFrame.remove();
+
+  const exploreFrame = await load({ ...initialState(), open: true, stage: 'explore', exploreView: 'home' });
+  const exploreDocument = exploreFrame.contentDocument;
+  const choices = [...exploreDocument.querySelectorAll('.explore-primary .explore-topic')];
+  check(choices.length === 2, 'Explore home shows exactly two choices');
+  check(!!exploreDocument.querySelector('[data-explore-view="types"]'), 'Explore Insurance Types is available');
+  check(!!exploreDocument.querySelector('[data-explore-journey="basics"]'), 'Guided Learning is available');
+  check(!/What would you like to understand/i.test(exploreDocument.body.textContent), 'Old understanding prompt is removed');
+  check(!exploreDocument.querySelector('[data-explore-view="understand"], [data-explore-view="glossary"]'), 'Understanding and glossary shortcuts are removed');
+
+  exploreDocument.querySelector('[data-explore-view="types"]').click();
+  const typeButtons = [...exploreDocument.querySelectorAll('.type-grid > button')];
+  const enabled = typeButtons.filter(button => !button.disabled);
+  check(enabled.length === 2, 'Only two insurance types are enabled');
+  check(/Life Insurance/i.test(enabled[0]?.textContent || ''), 'Life Insurance is the first enabled type');
+  check(/Motor Insurance/i.test(enabled[1]?.textContent || ''), 'Motor Insurance is the second enabled type');
+  check(typeButtons.slice(2).every(button => button.disabled), 'All remaining insurance types are disabled');
+  check(!!enabled[0].matches('[data-life-journey]'), 'Life Insurance opens its guided journey');
+  check(enabled[1].dataset.policyType === 'motor', 'Motor Insurance opens its end-to-end journey');
+  const conversation = exploreDocument.querySelector('.conversation');
+  check(conversation.scrollWidth <= conversation.clientWidth + 1, 'Insurance types do not create horizontal mobile overflow');
+
+  const failures = results.filter(result => !result.condition);
+  document.querySelector('#checks').innerHTML = results.map(result => `<li class="${result.condition ? 'pass' : 'fail'}">${result.condition ? 'PASS' : 'FAIL'}: ${result.label}</li>`).join('');
+  document.querySelector('#status').textContent = `${results.length - failures.length} passed; ${failures.length} failed`;
+  document.body.dataset.result = failures.length ? 'failed' : 'passed';
+</script>
+</body>
+</html>

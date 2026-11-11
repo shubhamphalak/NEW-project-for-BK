@@ -48,3 +48,5 @@ Object.assign(strings.en,{usage:'Vehicle use'});Object.assign(strings.ar,{usage:
 
 // Customer-facing advisor identity.
 Object.assign(strings.en,{assistant:'Himaya'});Object.assign(strings.ar,{assistant:'Himaya'});
+Object.assign(strings.en,{attachDocument:'Upload document',removeDocument:'Remove document',documentReady:'Ready to send',documentTypes:'PDF, JPG, PNG, DOC or DOCX · up to 10 MB',documentTooLarge:'Choose a document smaller than 10 MB.',documentUnsupported:'Choose a PDF, JPG, PNG, DOC or DOCX file.',documentReceived:'Document added to this conversation for demonstration. No file was uploaded or sent to ART.'});
+Object.assign(strings.ar,{attachDocument:'إرفاق مستند',removeDocument:'إزالة المستند',documentReady:'جاهز للإرسال',documentTypes:'PDF أو JPG أو PNG أو DOC أو DOCX · حتى 10 ميجابايت',documentTooLarge:'اختر مستنداً يقل حجمه عن 10 ميجابايت.',documentUnsupported:'اختر ملف PDF أو JPG أو PNG أو DOC أو DOCX.',documentReceived:'تمت إضافة المستند إلى هذه المحادثة للعرض فقط. لم يتم رفع أي ملف أو إرساله إلى تكافل الراجحي.'});

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Coverage and premium action checks</title>
+<body>
+<p id="status">Running</p>
+<ol id="checks"></ol>
+<script type="module">
+  import { initialState } from '../src/flow.js';
+
+  const results = [];
+  const check = (condition, label) => results.push({ condition, label });
+  const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
+  const until = async callback => {
+    for (let attempt = 0; attempt < 400; attempt++) {
+      const value = callback();
+      if (value) return value;
+      await wait(25);
+    }
+    throw new Error('Timed out waiting for coverage recommendation');
+  };
+
+  sessionStorage.setItem('art-insurance-demo-v1', JSON.stringify({
+    ...initialState(),
+    open: true,
+    stage: 'explore',
+    profile: { category: 'life', goal: 'protect', selectedProduct: 'family', age: 35, dependants: 2, existingCover: 0, term: 20, budget: 500, coverage: 300000 },
+    purchaseFlow: { stage: 'selected', category: 'life', lifeGoal: 'protect', option: 'Family Foundation', selectedPlan: 'family', aiRecommended: true }
+  }));
+
+  const frame = document.createElement('iframe');
+  frame.width = 390;
+  frame.height = 844;
+  const loaded = new Promise(resolve => frame.onload = resolve);
+  frame.src = '../index.html';
+  document.body.append(frame);
+  await loaded;
+  const doc = frame.contentDocument;
+  const win = frame.contentWindow;
+
+  const launcher = doc.querySelector('[data-flow-calculator]');
+  check(!!launcher, 'Selected life plan has a coverage and premium calculator action');
+  launcher.click();
+  const calculator = await until(() => doc.querySelector('#insurance-calculator-form'));
+  check(!!calculator, 'The action opens the calculator inside the chatbot');
+
+  doc.querySelector('[data-best-fit]').click();
+  check(/monthly income/i.test(doc.querySelector('[data-best-fit-error]')?.textContent || ''), 'Missing income produces visible guidance');
+
+  const income = doc.querySelector('[data-calc-input="monthlyIncome"]');
+  income.value = '15000';
+  income.dispatchEvent(new win.Event('input', { bubbles: true }));
+  doc.querySelector('[data-best-fit]').click();
+  await until(() => ['true', 'error'].includes(doc.querySelector('[data-calculator-result]')?.dataset.recommendation || doc.querySelector('[data-calculator-result]')?.dataset.status));
+  const output = doc.querySelector('[data-calculator-result]');
+  check(output.dataset.recommendation === 'true', `Recommendation completes: ${output.textContent}`);
+  check(!!output.querySelector('[data-calculator-coverage]'), 'Recommendation shows suggested coverage');
+  check(!!output.querySelector('[data-calculator-monthly]'), 'Recommendation shows estimated monthly premium');
+  check(!doc.querySelector('[data-calculator-submit]').disabled, 'Completed recommendation can be submitted');
+
+  const failures = results.filter(result => !result.condition);
+  document.querySelector('#checks').innerHTML = results.map(result => `<li class="${result.condition ? 'pass' : 'fail'}">${result.condition ? 'PASS' : 'FAIL'}: ${result.label}</li>`).join('');
+  document.querySelector('#status').textContent = `${results.length - failures.length} passed; ${failures.length} failed`;
+  document.body.dataset.result = failures.length ? 'failed' : 'passed';
+</script>
+</body>
+</html>

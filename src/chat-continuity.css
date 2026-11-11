@@ -1,0 +1,377 @@
+.chat-panel:has(.explore-policy-catalogue) .message-form,
+.chat-panel:has(.personalized-recommendations) .message-form,
+.chat-panel:has(.benefit-builder) .message-form {
+  display: flex;
+}
+
+.explore-policy-catalogue .synthetic-disclosure {
+  display: none;
+}
+
+.catalogue-policy-card.seller,
+.synthetic-plan-card:has(> em.popular) {
+  border-color: #d49a26;
+  background: linear-gradient(145deg, #fff9e9, #fff 58%);
+  box-shadow: inset 4px 0 #d49a26, 0 10px 26px #b57a171c;
+}
+
+.catalogue-band.seller,
+.synthetic-plan-card > em.popular {
+  padding: 5px 9px;
+  border: 1px solid #e6bd67;
+  background: #fff0c7;
+  color: #80520a;
+  font-weight: 800;
+  letter-spacing: .045em;
+  box-shadow: 0 3px 9px #a96d1517;
+}
+
+.protection-priorities-section,
+.customer-profile-form > .profile-section:nth-of-type(4) {
+  display: none;
+}
+
+.renewal-policy-comparison {
+  display: grid;
+  gap: 11px;
+  padding: 14px;
+  border: 1px solid #c9deeb;
+  border-radius: 15px;
+  background: linear-gradient(145deg, #f6fbfe, #fff);
+}
+
+.renewal-comparison-head small {
+  color: #1683ad;
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: .09em;
+}
+
+.renewal-comparison-head h3 {
+  margin: 4px 0 5px;
+  color: #173f72;
+  font-size: 16px;
+}
+
+.renewal-comparison-head p {
+  margin: 0;
+  color: #60778c;
+  font-size: 8px;
+  line-height: 1.55;
+}
+
+.renewal-comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9px;
+}
+
+.renewal-comparison-grid article {
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #d7e4ec;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.renewal-comparison-grid article > em {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 7px;
+  border-radius: 999px;
+  font-size: 6.5px;
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+
+.renewal-comparison-grid article > em .icon {
+  width: 10px;
+}
+
+.renewal-current-policy {
+  border-left: 4px solid #7189a4 !important;
+}
+
+.renewal-current-policy > em {
+  background: #edf2f6;
+  color: #4f6880;
+}
+
+.renewal-best-fit {
+  border-color: #4bb1d4 !important;
+  background: linear-gradient(145deg, #ebf9fe, #fff 62%) !important;
+  box-shadow: 0 8px 20px #0b8fbd17;
+}
+
+.renewal-best-fit > em {
+  background: #ddf4ec;
+  color: #1e735d;
+}
+
+.renewal-comparison-grid article > small,
+.renewal-comparison-grid h4,
+.renewal-policy-number {
+  display: block;
+}
+
+.renewal-comparison-grid article > small {
+  margin-top: 9px;
+  color: #72869a;
+  font-size: 6.8px;
+}
+
+.renewal-comparison-grid h4 {
+  margin: 3px 0;
+  color: #1d4776;
+  font-size: 11px;
+}
+
+.renewal-policy-number {
+  color: #708396;
+  font-size: 7px;
+}
+
+.renewal-policy-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.renewal-policy-metrics > span {
+  padding: 7px;
+  border-radius: 8px;
+  background: #f2f6f9;
+}
+
+.renewal-policy-metrics small,
+.renewal-policy-metrics strong {
+  display: block;
+}
+
+.renewal-policy-metrics small {
+  color: #71869a;
+  font-size: 6.4px;
+}
+
+.renewal-policy-metrics strong {
+  margin-top: 2px;
+  color: #204a78;
+  font-size: 9px;
+}
+
+.renewal-best-fit ul {
+  display: grid;
+  gap: 4px;
+  margin: 9px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.renewal-best-fit li {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+  color: #5f768b;
+  font-size: 7px;
+  line-height: 1.45;
+}
+
+.renewal-best-fit li .icon {
+  width: 10px;
+  color: #268a71;
+}
+
+@media (max-width: 600px) {
+  .renewal-comparison-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .renewal-comparison-head p,
+  .renewal-best-fit li {
+    font-size: 8px;
+  }
+}
+
+.journey-upload-card {
+  display: grid;
+  grid-template-columns: 38px 1fr auto;
+  align-items: center;
+  gap: 11px;
+  padding: 13px;
+  border: 1px dashed #9fc9dc;
+  border-radius: 13px;
+  background: linear-gradient(145deg, #f4fbfe, #fff);
+}
+
+.journey-upload-icon {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: #e5f5fb;
+  color: #1485b1;
+}
+
+.journey-upload-icon .icon {
+  width: 19px;
+}
+
+.journey-upload-copy {
+  min-width: 0;
+}
+
+.journey-upload-copy > small,
+.journey-upload-copy > strong,
+.journey-upload-copy > p,
+.journey-upload-status {
+  display: block;
+}
+
+.journey-upload-copy > small {
+  color: #1683ad;
+  font-size: 6.5px;
+  font-weight: 800;
+  letter-spacing: .08em;
+}
+
+.journey-upload-copy > strong {
+  margin-top: 3px;
+  color: #204a78;
+  font-size: 10px;
+}
+
+.journey-upload-copy > p {
+  margin: 3px 0 5px;
+  color: #687e91;
+  font-size: 7.5px;
+  line-height: 1.5;
+}
+
+.journey-upload-status {
+  color: #587288;
+  font-size: 7px;
+  overflow-wrap: anywhere;
+}
+
+.journey-upload-status .icon {
+  width: 10px;
+  color: #27886f;
+}
+
+.journey-upload-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-height: 34px;
+  padding: 7px 9px;
+  border: 1px solid #9fc9dc;
+  border-radius: 8px;
+  background: #fff;
+  color: #176d96;
+  font-size: 7.5px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.journey-upload-action:hover {
+  border-color: #2ca2cf;
+  background: #eef9fd;
+}
+
+.journey-upload-action .icon {
+  width: 12px;
+}
+
+.journey-upload-action input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.supporting-upload {
+  margin: 12px 0;
+}
+
+.benefit-card,
+.benefit-check {
+  transition: border-color 120ms ease, background-color 120ms ease, box-shadow 120ms ease;
+}
+
+.benefit-card.selected {
+  box-shadow: inset 3px 0 #168dbb;
+}
+
+.himaya-summary-response {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 13px 14px;
+  border: 1px solid #b8ddec;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f1faff 0%, #ffffff 72%);
+  box-shadow: 0 6px 18px rgba(19, 74, 112, 0.06);
+}
+
+.himaya-summary-response > span {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  border-radius: 9px;
+  background: #e2f4fb;
+  color: #1486ad;
+}
+
+.himaya-summary-response > span .icon {
+  width: 15px;
+}
+
+.himaya-summary-response small {
+  display: block;
+  margin-bottom: 4px;
+  color: #1683ad;
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.himaya-summary-response p {
+  margin: 0;
+  color: #365a77;
+  font-size: 9px;
+  line-height: 1.65;
+}
+
+@media (max-width: 600px) {
+  .journey-upload-card {
+    grid-template-columns: 34px 1fr;
+  }
+
+  .journey-upload-action {
+    grid-column: 1 / -1;
+    width: 100%;
+    font-size: 9px;
+  }
+
+  .journey-upload-copy > strong {
+    font-size: 11px;
+  }
+
+  .journey-upload-copy > p,
+  .journey-upload-status {
+    font-size: 8.5px;
+  }
+
+  .himaya-summary-response p {
+    font-size: 10px;
+  }
+}

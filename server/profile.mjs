@@ -1,5 +1,5 @@
 ﻿export const numericFields={age:[0,100],monthlyIncome:[0,10000000],annualIncome:[0,120000000],dependants:[0,20],existingCover:[0,100000000],coverage:[10000,5000000],budget:[1,100000],term:[5,40],paymentTerm:[5,40],educationYears:[1,30]};
-export const enums={goal:['protect','combined','education','decide'],frequency:['monthly','quarterly','annual'],category:['life','health','motor','travel'],selectedProduct:['family','balance','education']};
+export const enums={goal:['protect','combined','education','decide'],frequency:['monthly','quarterly','semiannual','annual'],category:['life','health','motor','travel'],selectedProduct:['family','family-essential','family-plus','balance','balance-flex','balance-growth','education','education-starter','education-plus']};
 export function validateProfile(input={}){
  if(!input||typeof input!=='object'||Array.isArray(input))throw Error('Invalid profile');const out={};
  for(const [key,value]of Object.entries(input)){

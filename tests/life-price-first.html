@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Life price-card first-click check</title>
+<body>
+<p id="status">Running</p>
+<ol id="checks"></ol>
+<script type="module">
+  import { initialState } from '../src/flow.js';
+
+  const checks = [];
+  const check = (condition, label) => checks.push({ condition, label });
+  const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
+  const until = async callback => {
+    for (let attempt = 0; attempt < 200; attempt++) {
+      const value = callback();
+      if (value) return value;
+      await wait(25);
+    }
+    throw new Error('Timed out waiting for life price cards');
+  };
+
+  sessionStorage.setItem('art-insurance-demo-v1', JSON.stringify({
+    ...initialState(),
+    open: true,
+    stage: 'explore',
+    profile: { category: 'life', goal: 'protect' },
+    purchaseFlow: { stage: 'options', category: 'life', lifeGoal: 'protect' },
+    messages: [{
+      role: 'bot',
+      localized: {
+        en: 'Choose one:\n\n- **Family Foundation** — family protection.\n- **Future Balance** — protection and savings.\n- **Education Horizon** — education planning.',
+        ar: 'اختر خطة.'
+      }
+    }]
+  }));
+
+  const frame = document.createElement('iframe');
+  frame.width = 430;
+  frame.height = 850;
+  const loaded = new Promise(resolve => frame.onload = resolve);
+  frame.src = '../index.html';
+  document.body.append(frame);
+  await loaded;
+  const doc = frame.contentDocument;
+  await until(() => doc.querySelectorAll('.life-plan-card').length === 3);
+
+  check(frame.contentWindow.artDemo.snapshot().purchaseFlow.stage === 'plans', 'Legacy life direction step is migrated directly to priced plans');
+  check(doc.querySelectorAll('.life-plan-card').length === 3, 'Three priced family plan cards appear immediately');
+  check(doc.querySelectorAll('.messages [data-reply-option]').length === 0, 'Duplicate Family Foundation direction control is removed');
+  check(/SAR/i.test(doc.querySelector('.life-plan-card').textContent), 'The first plan view includes SAR pricing');
+  check(doc.querySelectorAll('.life-plan-card.recommended').length === 1, 'One AI best-fit plan is highlighted');
+
+  const failures = checks.filter(item => !item.condition);
+  document.querySelector('#checks').innerHTML = checks.map(item => `<li class="${item.condition ? 'pass' : 'fail'}">${item.condition ? 'PASS' : 'FAIL'}: ${item.label}</li>`).join('');
+  document.querySelector('#status').textContent = `${checks.length - failures.length} passed; ${failures.length} failed`;
+  document.body.dataset.result = failures.length ? 'failed' : 'passed';
+</script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<style>html,body,iframe{margin:0;border:0;width:100%;height:100%;overflow:hidden;display:block}</style>
+<body>
+<script type="module">
+import {initialState} from '../src/flow.js';
+const profile={fullName:'Faisal Al Harbi',mobile:'••••••1234',email:'faisal@example.com',identity:'••••••7890',dateOfBirth:'1988-05-14',age:38,gender:'male',monthlyIncome:18000,salary:18000,occupation:'Senior Manager',city:'Riyadh',dependants:3,existingCover:300000,currentCoverage:300000,currentPremium:520,budget:650,coverage:900000,term:20,paymentTerm:20,frequency:'monthly',goal:'protect'};
+const seed={...initialState(),open:true,stage:'explore',exploreView:'response',registered:true,authenticated:true,customerType:'existing',profile,accountProfile:{name:profile.fullName,email:profile.email,mobile:profile.mobile,identity:profile.identity},profileJourney:{mode:'renew',customerType:'existing'},purchaseFlow:{stage:'recommendations',category:'life',lifeGoal:'protect',renewal:true,journeyMode:'renew',aiAssisted:true,synthetic:true},messages:[{role:'bot',localized:{en:'I analysed your profile against 120 synthetic life policies. Your ranked shortlist is ready with affordability, protection-fit and popularity insights.',ar:'Your shortlist is ready.'}}]};
+sessionStorage.setItem('art-insurance-demo-v1',JSON.stringify(seed));
+const frame=document.createElement('iframe');frame.src='../index.html';frame.title='Personalized renewal preview';document.body.append(frame);
+</script>
+</body>
+</html>

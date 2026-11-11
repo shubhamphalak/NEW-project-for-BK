@@ -1,0 +1,5 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><style>html,body,iframe{margin:0;border:0;width:100%;height:100%;overflow:hidden;display:block}</style><body><script type="module">
+import {initialState} from '../src/flow.js';
+sessionStorage.setItem('art-insurance-demo-v1',JSON.stringify({...initialState(),open:true,stage:'explore',customerType:'new',registered:false,exploreView:'response',purchaseFlow:{stage:'catalogue',category:'life',lifeGoal:'all',catalogueFilter:'all',catalogueVisible:9,guestCatalogue:true,aiAssisted:true,synthetic:true},messages:[{role:'bot',localized:{en:'Explore Life Insurance policies with AI-supported explanations.',ar:'Explore Life Insurance policies.'}}]}));
+const frame=document.createElement('iframe');frame.src='../index.html';frame.title='New customer Life Insurance catalogue';document.body.append(frame);
+</script></body></html>

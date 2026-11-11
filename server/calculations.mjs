@@ -25,7 +25,7 @@ export async function scenario(profile={},baseline){
  const current=price(selected,p),previous=baseline?price(selected,effective(validateProfile(baseline))):current;
  for(const m of matches)m.annualEquivalent=round(m.normalized*12);
  const delta={productId:selected.id,previousMonthly:round(previous.normalized),currentMonthly:round(current.normalized),previousAnnual:round(previous.normalized*12),currentAnnual:round(current.normalized*12),absoluteMonthly:round(current.normalized-previous.normalized),absoluteAnnual:round((current.normalized-previous.normalized)*12),percentage:previous.normalized?round((current.normalized-previous.normalized)/previous.normalized*100):0,barPrevious:round(previous.normalized/Math.max(previous.normalized,current.normalized)*100),barCurrent:round(current.normalized/Math.max(previous.normalized,current.normalized)*100),eligible:matches.some(m=>m.product.id===selected.id)};
-  const paymentFactor=p.frequency==='annual'?.96:p.frequency==='quarterly'?.99:1;
+  const paymentFactor=p.frequency==='annual'?.96:p.frequency==='semiannual'?.98:p.frequency==='quarterly'?.99:1;
  const costOne=price(selected,{...p,coverage:100000}).normalized,costTwo=price(selected,{...p,coverage:200000}).normalized;
  const affordable=Math.max(0,Math.floor((p.budget-(costOne-(costTwo-costOne)))/(costTwo-costOne)*100000/25000)*25000);
  const cap=Math.min(selected.maxCover,affordable),values=[selected.minCover,Math.min(cap,p.coverage),cap];

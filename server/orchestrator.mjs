@@ -8,7 +8,7 @@ export async function orchestrate(session,body,config,emit,fetcher,signal){
  const run=async(id,fn,result)=>{send(id,'in_progress');try{const status=await fn();send(id,status==='unavailable'?'unavailable':'completed',result);}catch(e){send(id,'unavailable');throw e;}};
  if(config.mode==='error')return adviceFailure('missing_key',session.profile,body.stage);
  const snapshot=structuredClone({profile:session.profile,motor:session.motor,productContexts:session.productContexts||{}});
- const motor=motorRequest(body.message,session);const target=motor?'motor':/life|حياة|حماية العائلة/i.test(body.message)?'life':session.profile.category||'life';
+ const motor=body.stage!=='explore'&&motorRequest(body.message,session);const target=motor?'motor':/life|حياة|حماية العائلة/i.test(body.message)?'life':session.profile.category||'life';
  session.productContexts||={};const previous=session.profile.category||'life';
  if(previous!==target){session.productContexts[previous]=structuredClone(session.profile);session.profile=session.productContexts[target]||{category:target};body={...body,profile:session.profile};}
  

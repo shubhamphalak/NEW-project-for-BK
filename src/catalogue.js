@@ -7,9 +7,9 @@ export function price(product, profile) {
  const risk=product.rate*(p.coverage/100000)*(1+Math.max(0,p.age-25)*.025)*(1+Math.max(0,p.term-10)*.012);
  const savings=product.savings*p.term/pay;
  const monthly=Math.ceil((risk*p.term/pay+savings)*100)/100;
- const factor=p.frequency==='annual'?11.52:p.frequency==='quarterly'?2.97:1;
+ const factor=p.frequency==='annual'?11.52:p.frequency==='semiannual'?5.88:p.frequency==='quarterly'?2.97:1;
  const contribution=Math.round(monthly*factor*100)/100;
- const normalized=contribution/(p.frequency==='annual'?12:p.frequency==='quarterly'?3:1);
+ const normalized=contribution/(p.frequency==='annual'?12:p.frequency==='semiannual'?6:p.frequency==='quarterly'?3:1);
  // Fictional 3% net annual savings growth; no guaranteed maturity value.
  const projected=product.savings ? Math.round(savings*12*((Math.pow(1.03,pay)-1)/.03)*Math.pow(1.03,p.term-pay)) : null;
  return {monthly,contribution,normalized,projected,paymentTerm:pay,savingsPaid:Math.round(savings*12*pay)};
@@ -26,7 +26,8 @@ export function match(profile,products=catalogue) {
   if(quote.normalized>p.budget) issues.push('budgetConstraint');
   if(issues.length) rejected.push({product,issues}); else matches.push({product,...quote});
  }
- matches.sort((a,b)=>((b.product.kind===p.goal?10:0)-(a.product.kind===p.goal?10:0))||a.normalized-b.normalized);
+ const primary=new Set(['family','balance','education']);
+ matches.sort((a,b)=>((b.product.id===p.selectedProduct?100:0)-(a.product.id===p.selectedProduct?100:0))||((b.product.kind===p.goal?10:0)-(a.product.kind===p.goal?10:0))||Number(primary.has(b.product.id))-Number(primary.has(a.product.id))||a.normalized-b.normalized);
  return {matches:matches.slice(0,3),rejected,profile:p};
 }
 export function normalize(text){return text.replace(/[٠-٩]/g,c=>String('٠١٢٣٤٥٦٧٨٩'.indexOf(c))).replace(/[٬,]/g,'').toLowerCase();}

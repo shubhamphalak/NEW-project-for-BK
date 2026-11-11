@@ -1,5 +1,5 @@
 ﻿import {extract,nextStep} from './catalogue.js';
-export const initialState=()=>({experienceVersion:3,lang:'en',open:false,stage:'guest',profile:{},messages:[],compared:[],searching:false,authenticated:false,changed:[]});
+export const initialState=()=>({experienceVersion:4,lang:'en',open:false,stage:'guest',profile:{},messages:[],compared:[],searching:false,authenticated:false,changed:[]});
 export function advance(state,action){
  const s={...state,profile:{...state.profile},messages:[...state.messages]};
  const bot=(key,params={})=>s.messages.push({role:'bot',key,params});
