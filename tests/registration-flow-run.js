@@ -15,15 +15,21 @@ const click=selector=>{const target=doc.querySelector(selector);if(!target)throw
 
 try{
   check(!!doc.querySelector('.premium-home')&&doc.querySelectorAll('.premium-home [data-journey]').length===2,'Home presents the two concise customer paths');
-  check(/Himaya/.test(doc.querySelector('.chat-header')?.textContent||'')&&doc.querySelectorAll('.chat-header .icon-button').length>=3,'Single Himaya header retains customer controls');
+  check(/Himaya/.test(doc.querySelector('.chat-header')?.textContent||'')&&!/Guest|Ready/.test(doc.querySelector('.chat-heading')?.textContent||'')&&!doc.querySelector('.calculator-launch')&&doc.querySelectorAll('.chat-header .icon-button').length===3,'Single Himaya header keeps only language, reset and minimize controls');
+  check(!!doc.querySelector('.chat-panel.agentic-shell')&&/Begin your insurance journey/i.test(doc.querySelector('.agent-commentary-empty')?.textContent||'')&&!doc.querySelector('.agent-run-card')&&!doc.querySelector('.agent-roster'),'Right activity panel presents a professional starting message');
+  check(!doc.querySelector('[data-agent-nav=renew]')&&!doc.querySelector('[data-agent-nav=talk]'),'Renew Policy and Talk to us header actions are removed');
 
   click('[data-journey=new]');
+  check(!!doc.querySelector('[data-new-path]')&&!!doc.querySelector('.agent-commentary-empty')&&!doc.querySelector('[data-agent-work]'),'New Customer navigation does not trigger an agent');
   click('[data-new-path=register]');
   await until(()=>!!doc.querySelector('#customer-profile-form'));
+  check(!!doc.querySelector('.agent-commentary-empty')&&!doc.querySelector('[data-agent-work]'),'Create Account opens as setup without triggering an agent');
   const form=doc.querySelector('#customer-profile-form');
   const nationalIdUpload=form.querySelector('[data-national-id-upload]');
   check(!!nationalIdUpload&&!nationalIdUpload.required&&/pdf/.test(nationalIdUpload.accept),'Create ART account offers an optional National ID document upload');
   const idFiles=new win.DataTransfer();idFiles.items.add(new win.File(['id'],'national-id.pdf',{type:'application/pdf'}));nationalIdUpload.files=idFiles.files;nationalIdUpload.dispatchEvent(new win.Event('change',{bubbles:true}));check(/national-id.pdf/.test(form.querySelector('[data-national-id-status]')?.textContent||''),'Selected National ID document is acknowledged in the form');
+  check(state().agentDocumentCheck?.status==='scanning'&&/OCR extraction/i.test(doc.querySelector('.document-agent-result')?.textContent||''),'Identity and Document Agent visibly reports document-reading activity');
+  form.elements.identityNumber.value='34567';nationalIdUpload.dispatchEvent(new win.Event('change',{bubbles:true}));check(state().agentDocumentCheck?.status==='invalid'&&/not valid/i.test(doc.querySelector('.document-agent-result.invalid')?.textContent||''),'Document Agent flags an invalid National ID format in the live activity panel');
   const expected=['fullName','mobile','email','identityNumber','dateOfBirth','age','gender','monthlyIncome','occupation','city','dependants','existingCover','goal','budget','coverage','term'];
   check(expected.every(name=>!!form.elements[name]),'Create ART account captures the complete shared customer profile');
   check(!form.elements.goal.closest('.profile-section')&&!/Protection priorities/i.test(form.textContent),'Protection priorities section is removed from the customer form');
@@ -35,6 +41,7 @@ try{
   form.elements.consent.checked=true;
   form.dispatchEvent(new win.Event('submit',{bubbles:true,cancelable:true}));
   await until(()=>state().purchaseFlow?.stage==='recommendations');
+  check(doc.querySelector('.agent-stage-row.running')?.textContent.includes('Recommendation')&&!doc.querySelector('.agent-handoff-route'),'Profile analysis starts with the Recommendation specialist without a handoff strip');
   check(state().registered===true&&state().profile.age===55&&state().profile.occupation==='Finance Director'&&state().profile.dependants===3,'DOB and a different editable age submit without blocking validation');
   const saved=JSON.stringify(state());
   check(!saved.includes('0551234567')&&!saved.includes('1234567890')&&/4567/.test(saved)&&/7890/.test(saved),'Mobile and identity are masked after submission');
@@ -47,6 +54,7 @@ try{
   check(/HIMAYA RECOMMENDATION/i.test(doc.querySelector('.synthetic-plan-card.recommended')?.textContent||'')&&/selections/i.test(doc.querySelector('.synthetic-plan-card.recommended')?.textContent||''),'Himaya recommendation card combines reasoning, price, cover and popularity');
 
   click('.synthetic-plan-card.recommended');
+  await until(()=>!state().aiPending);
   check(state().purchaseFlow?.stage==='addons'&&doc.querySelectorAll('.benefit-card').length>=4,'Selecting a policy opens optional paid benefits without a redundant explanation screen');
   check(Number.isFinite(state().purchaseFlow?.syntheticPolicy?.premium)&&!doc.querySelector('.benefit-total')?.textContent.includes('NaN'),'Selected policy retains its ranked premium and coverage');
   const benefitBuilder=doc.querySelector('.benefit-builder'),criticalCard=doc.querySelector('[data-toggle-addon="critical-illness"]');
@@ -76,18 +84,21 @@ try{
   check(!!doc.querySelector('.purchase-flow.final-review'),'Selected policy reaches final purchase review with captured account details');
   click('[data-confirm-purchase]');
   check(state().purchaseFlow?.stage==='payment-ready'&&/Next step: secure payment/i.test(doc.querySelector('.payment-ready')?.textContent||''),'Purchase journey ends with payment as the next step');
+  check(doc.querySelector('.agent-stage-row.running')?.textContent.includes('Payment & Issuance'),'Agent orchestration advances to payment and issuance at the purchase handoff');
   click('[data-payment-demo]');
   check(state().purchaseFlow?.stage==='payment-demo'&&/without collecting card or bank details/i.test(doc.querySelector('.payment-demo')?.textContent||''),'Static payment handoff does not collect financial details');
 
   click('[data-main-journeys]');
   check(state().stage==='guest'&&state().purchaseFlow==null&&Object.keys(state().profile||{}).length===0&&!state().registered&&!state().authenticated&&!state().accountProfile&&!state().profileJourney&&!state().documentUploads&&!state().prepared&&state().messages.length===0,'Returning after payment starts a clean customer journey without old profile or form data');
   click('[data-journey=existing]');
-  check(doc.querySelectorAll('[data-existing-path]').length===2&&!doc.querySelector('[data-existing-path=nearby]'),'Existing customer offers only Renew Policy and Buy New Policy');
+  check(doc.querySelectorAll('[data-existing-path]').length===2&&!doc.querySelector('[data-existing-path=nearby]')&&!doc.querySelector('[data-agent-work]')&&!!doc.querySelector('.agent-commentary-empty'),'Existing Customer opens its options without triggering an agent');
   const originalFetch=win.fetch;
-  win.fetch=(url,...args)=>String(url)==='/api/auth/login'?Promise.resolve(new win.Response(JSON.stringify({contact:{name:'Faisal Al Harbi',email:'faisal@example.com'},customer:{policies:[]},profile:{age:38,coverage:900000,budget:650,dependants:3,term:20},reply:{en:'Signed in securely.',ar:'Signed in securely.'}}),{status:200,headers:{'Content-Type':'application/json'}})):originalFetch.call(win,url,...args);
+  win.fetch=(url,...args)=>String(url)==='/api/auth/login'?new Promise(resolve=>win.setTimeout(()=>resolve(new win.Response(JSON.stringify({contact:{name:'Faisal Al Harbi',email:'faisal@example.com'},customer:{policies:[]},profile:{age:38,coverage:900000,budget:650,dependants:3,term:20},reply:{en:'Signed in securely.',ar:'Signed in securely.'}}),{status:200,headers:{'Content-Type':'application/json'}})),120)):originalFetch.call(win,url,...args);
 
   click('[data-existing-path=new]');
+  check(!!doc.querySelector('#login-form')&&!!doc.querySelector('.agent-commentary-empty')&&!doc.querySelector('[data-agent-work]')&&!doc.querySelector('.agent-run-card'),'Login opens without running or displaying an agent');
   let login=doc.querySelector('#login-form');login.elements.username.value='existing';login.elements.password.value='secure-password';login.dispatchEvent(new win.Event('submit',{bubbles:true,cancelable:true}));
+  await until(()=>state().loginPending);check(!!doc.querySelector('.account-login-loader')&&/Getting your account details/i.test(doc.querySelector('.account-login-loader')?.textContent||'')&&!!doc.querySelector('.agent-commentary-empty')&&!doc.querySelector('[data-agent-work]'),'Login uses a neutral account-details loader instead of an agent GIF');
   await until(()=>!!doc.querySelector('#customer-profile-form'));
   check(state().profileJourney?.mode==='buy-new'&&!doc.querySelector('#customer-profile-form [name=currentPremium]'),'Existing Buy New Policy uses the shared profile without renewal-only fields');
   check(doc.querySelector('#customer-profile-form [name=occupation]')?.value&&doc.querySelector('#customer-profile-form [name=city]')?.value,'Existing account prefills occupation and city for AI ranking');
@@ -109,6 +120,8 @@ try{
   const renewalSummary=doc.querySelector('.himaya-summary-response');
   check(!doc.querySelector('.insight-grid')&&/existing policy/i.test(renewalSummary?.textContent||'')&&/Himaya recommends/i.test(renewalSummary?.textContent||'')&&/renew or switch/i.test(renewalSummary?.textContent||''),'Renewal uses one concise comparison summary before the policy options');
   check(doc.querySelectorAll('.synthetic-plan-card').length===5,'Renewal ranks the same 120-policy catalogue into a five-plan shortlist');
+  win.confirm=()=>true;click('[data-action=restart]');
+  check(state().stage==='guest'&&!state().agentInteractionStarted&&!(state().agentRunHistory||[]).length&&/Begin your insurance journey/i.test(doc.querySelector('.agent-commentary-empty')?.textContent||'')&&!doc.querySelector('.agent-run-card'),'Reset chat also clears agent activity and restores the starting message');
   win.fetch=originalFetch;
 }catch(error){check(false,error.stack||error.message);}
 

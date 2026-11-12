@@ -3,6 +3,7 @@ import {installInsuranceCalculator,installCalculatorChatRequests} from './insura
 import {installAdvice} from './advisory.js';
 import {installExperience} from './experience.js';
 import {installPersonalizedJourneys,installPersonalizedChatRouting,applyHimayaTerminology} from './personalized-journeys.js';
+import {installAgenticWorkspace} from './agentic-workspace.js';
 import {advance,initialState} from './flow.js';
 import {match,effective,defaults} from './catalogue.js';
 import {translate,money} from './i18n.js';
@@ -109,3 +110,4 @@ installCalculatorChatRequests(Chat);
 installPersonalizedChatRouting(Chat);
 const himayaRender=Chat.prototype.render;
 Chat.prototype.render=function(){himayaRender.call(this);applyHimayaTerminology(this.host);};
+installAgenticWorkspace(Chat);
